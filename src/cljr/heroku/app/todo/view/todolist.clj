@@ -2,7 +2,7 @@
   (:use [hiccup.core :only [html h]]
         [hiccup.page-helpers :only [doctype]]
         [hiccup.form-helpers :only [form-to label text-area submit-button]])
-  (:require [cljr.app.todo.view.layout :as layout]))
+  (:require [cljr.heroku.app.todo.view.layout :as layout]))
 
 
 (defn display-todo-items
