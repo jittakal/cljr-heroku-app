@@ -19,17 +19,19 @@
     [:link {:rel "stylesheet" :href "/css/screen.css" :type "test/css" :media "print"}]
     (hcomment "[if lt IE 8]><link href=\"/css/ie.css\" media=\"screen,projection\" rel=\"stylesheet\" type=\"text/css\" /><![endif]")
     [:link {:rel "stylesheet" :href "/css/plugins/fancy-type/screen.css" :type "test/css" :media "screen, projection"}]
-    (include-css "http://fonts.googleapis.com/css?family=Sigmar+One&v1")]
+    (include-css "http://fonts.googleapis.com/css?family=Sigmar+One&v1")
+    [:script {:src "https://www.google.com/jsapi?key=ABQIAAAAbb3c4q3plY9Llxsn2O7SERSVhjZ2jchcMgrrlRYU9_ZU7rh8PRSgvXPGH3H8j4ysS4E9ednw-STV-A" :type "text/javascript"}]
+    [:script {:src "/js/todo-script.js" :type "text/javascript"}]]
    [:body
     [:div {:class "container"}
      [:div {:id "header" :class "span-24 last"}
       [:h1 {:id "todo"}
-       [:img {:src "/css/plugins/buttons/icons/tick.png" :alt "ToDo" :id "header-image"}]]]
+       [:img {:src "/css/plugins/buttons/icons/tick.png" :alt "ToDo" :id "header-image"}] "All Tasks"]]
      [:hr]
-     [:div {:id "subheader" :class "span-24 last"}
-      [:h3 {:class "alt"} "All Tasks"]]
-     [:hr]
-     [:div {:id "body" :class "span-24"} body]]]))
+     [:div {:id "main-content" :class "span-24 last"}
+      [:div {:id "body" :class "span-16"} body]
+      [:div {:id "searchcontrol" :class "span-8 last"} "Loading ..."]]
+     [:hr]]]))
 
 (defn four-oh-four
   []

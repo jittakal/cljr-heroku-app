@@ -9,6 +9,10 @@
       ["select * from todolist"]
       (into [] results))))
 
+(defn all-temp
+  []
+  [{:id 1 :name "Home"} {:id 2 :name "Business"}])
+
 (defn get-name
   [todolistid]
   (sql/with-connection db

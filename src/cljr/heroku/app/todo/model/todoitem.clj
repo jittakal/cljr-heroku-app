@@ -9,6 +9,10 @@
       ["select tdi.*,tdl.name as tdlname from todoitem tdi, todolist tdl where tdi.todolistid=tdl.id"]
       (into [] results))))
 
+(defn all-temp
+  []
+  [{}])
+
 (defn create
   [todoitem]
   (sql/with-connection db

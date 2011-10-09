@@ -6,7 +6,7 @@
             [cljr.heroku.app.todo.model.todolist :as todolist-m]))
 
 (defn index []
-  (todolist-v/index (todolist-m/all)))
+  (todolist-v/index (todolist-m/all-temp)))
 
 (defroutes routes
   (GET "/" [] (index)))

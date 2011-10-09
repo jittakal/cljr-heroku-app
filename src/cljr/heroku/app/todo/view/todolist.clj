@@ -26,8 +26,4 @@
 (defn index
   [todolists]
   (layout/common "Todo Lists"
-                 (do
-                   (println
-                    (display-all-tasks [{:name "Task 1"} {:name "Task 2"}] todolists))
-                   (display-all-tasks [{:name "Task 1"} {:name "Task 2"}]
-                                      todolists))))
+                 (display-todo-lists todolists)))
