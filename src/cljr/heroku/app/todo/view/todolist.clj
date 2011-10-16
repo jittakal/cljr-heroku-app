@@ -25,5 +25,5 @@
 
 (defn index
   [todolists]
-  (layout/common "Todo Lists"
+  (layout/common "Todo List"
                  (display-todo-lists todolists)))

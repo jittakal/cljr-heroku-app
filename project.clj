@@ -6,7 +6,9 @@
                  [ring/ring-jetty-adapter "0.3.11"]
                  [postgresql/postgresql "8.4-702.jdbc4"]
                  [compojure "0.6.4"]
-                 [hiccup "0.3.6"]
                  [congomongo "0.1.7"]]               
-  :dev-dependencies [[swank-clojure "1.3.2"]]
+                 [hiccup "0.3.6"]]               
+  :dev-dependencies [[swank-clojure "1.3.3"]
+                     [lein-ring "0.4.5"]]
+  :ring {:handler cljr.heroku.app.todo.core/application}
   :repositories {"sonatype-oss-public" "http://oss.sonatype.org/content/groups/public/"})
