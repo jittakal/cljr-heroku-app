@@ -2,8 +2,12 @@
   (:use [cljr.heroku.app.todo.model.todolist])
   (:use [clojure.test]))
 
-;;(deftest test-all
-;;  (is (= 2 (count (all)))))
+(deftest test-get-all
+  (is (= "Home" (:name (first (get-all))))))
+
+(deftest test-get-by-id
+  (is (= "Home" (:name (get-by-id (:_id (first (get-all))))))))
+
 
 ;;(deftest test-create
 ;;  (is (. "Home" String/equals (:name (create {:name "Home"}))))
@@ -12,9 +16,4 @@
 ;;(deftest test-get-name
 ;;  (is (. "Home" String/equals (:name (first (get-name 1))))))
 
-(deftest test-get-tdl-mdb
-  (is (= "Home" (:name (get-tdl-mdb)))))
-
-(deftest test-get-all-tdl-mdb
-  (is (= 2 (count (get-all-tdl-mdb)))))
 

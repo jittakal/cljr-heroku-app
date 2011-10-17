@@ -1,19 +1,28 @@
 (ns cljr.heroku.app.todo.model.todoitem
-  (:use [clojure.java.jdbc :as sql :only (with-connection with-query-results insert-record)])
-  (:use [cljr.heroku.app.todo.model.base]))
+  (:use [cljr.heroku.app.todo.model.base])
+  (:use [somnium.congomongo])
+  (:use [somnium.congomongo.config :only [*mongo-config*]]))
 
-(defn all
+(defn get-all
+  "Return all the records of todoitem"
   []
-  (sql/with-connection db
-    (sql/with-query-results results
-      ["select tdi.*,tdl.name as tdlname from todoitem tdi, todolist tdl where tdi.todolistid=tdl.id"]
-      (into [] results))))
+  (with-mongo (get-mdb-connection)
+    (fetch :todoitems)))
+
+(defn get-by-id
+  "Return todolist record filter by primary key"
+  [id]
+  (with-mongo (get-mdb-connection)
+    (fetch-one :todoitems
+               :where {:_id id})))
+
+(defn create
+  "Create new todoitem record"
+  [record]
+  (with-mongo (get-mdb-connection)
+    (insert! :todoitems record)))
+
 
 (defn all-temp
   []
   [{}])
-
-(defn create
-  [todoitem]
-  (sql/with-connection db
-    (sql/insert-record :todoitem todoitem)))
