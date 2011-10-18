@@ -6,8 +6,8 @@
 (defpartial layout [& content]
   (html5
    [:head
-    [:title "my-website"]
-    [:meta {:name "description" :content "Sample web application"}]
+    [:title "Jitendra Takalkar"]
+    [:meta {:name "description" :content "ToDo App"}]
     [:meta {:name "author" :content "jitendra.takalkar@gmail.com"}]
     (include-css "/css/reset.css")
     (include-css "/css/bootstrap.min.css")
@@ -19,7 +19,7 @@
     [:div {:class "topbar"}
      [:div {:class "topbar-inner"}
       [:div {:class "container-fluid"}
-       [:a {:class "brand" :href "#"} "Sample Project"]
+       [:a {:class "brand" :href "#"} "ToDo App"]
        [:ul {:class "nav"}
         [:li {:class "active"}
          [:a {:href "#"} "Home"]]
@@ -38,6 +38,7 @@
          [:a {:href "#"} "Home"]]
         [:li
          [:a {:href "#"} "Business"]]]]]
-     [:div {:class "content"} content
-      [:footer
-       [:p "&copy; Jitendra Takalkar 2011"]]]]]))
+     [:div {:class "content"}      
+      [:div {:class "well"} content
+       [:footer
+        [:p "&copy; Jitendra Takalkar 2011"]]]]]]))
