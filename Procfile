@@ -1,1 +1,1 @@
-web: lein run -m cljr.heroku.app.todo.core
+web: lein run 
